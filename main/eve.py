@@ -24,22 +24,28 @@ import re
 import nltk
 import colorama
 import logging
-import main.BotConfig as BotConfig
+import main.bot_config as BotConfig
 
 
 def main():
-    bot = WolfBot()
+    bot = EveBot()
 
 
-class WolfBot(KikClientCallback):
+class EveBot(KikClientCallback):
     def __init__(self):
         bot_configuration = BotConfig.get_first_bot();
-        self.client = KikClient(self, 
-                kik_username=bot_configuration.username,
-                kik_password=bot_configuration.password, 
-                device_id_override=bot_configuration.device_id,
-                andoid_id_override=bot_configuration.android_id,
-                log_level=logging.INFO)
+        self.client = KikClient(self,
+                                kik_username=bot_configuration[0].username,
+                                kik_password=bot_configuration[0].password,
+                                device_id_override=bot_configuration[0].device_id,
+                                android_id_override=bot_configuration[0].android_id,
+                                operator_override=bot_configuration[0].operator,
+                                brand_override=bot_configuration[0].brand,
+                                model_override=bot_configuration[0].model,
+                                android_sdk_override=bot_configuration[0].android_sdk,
+                                install_date_override=bot_configuration[0].install_date,
+                                logins_since_install_override=bot_configuration[0].logins_since_install,
+                                registrations_since_install_override=bot_configuration[0].registrations_since_install)
         self.buffer = []
         # for captcha eval
         self.verify = Verify(self.client)
@@ -394,8 +400,6 @@ class WolfBot(KikClientCallback):
                     key=chat_message.body, user_jid=None)
                 if len(substitution) != 0:
                     self.client.send_chat_message(chat_message.group_jid, substitution[0].value)
-
-
 
     def wiki_manual(self, group_jid, body):
         qu = ' '.join(body.split()[3:])
