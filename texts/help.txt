@@ -1,0 +1,45 @@
+**** Commands ****
+
+
+ ** user commands **
+
+"eve stop": stops sending wikipedia definitions automatically for 60 minutes
+"eve start": starts sending wikipedia definitions automatically
+"eve verification time left": shows time remaining for verification to start
+"eve toss a coin" : tosses a coin
+"eve <question> <choice1> or <choice2>": helps you deciding between two choices
+"eve who is": search wikipedia manually
+"eve what is": search wikipedia manually
+"eve where is": search wikipedia manually
+"eve call me <name>": make me remember your name
+"hey" : Hello <your name>
+"eve forget my name": delete given name
+
+ask for movie recommendation from imdb top lists:
+example: "Eve recommend me comedy movies"
+               "Eve I want to watch a horror movies"
+               "Eve tell me a movie to watch"
+
+** admin commands **
+
+"eve stop verification": stops sending captcha to new joiners
+"eve start verification": starts sending captcha to new joiners
+"eve set welcome message to <enter your welcome message>"
+"eve set verification days to <number>": Accounts less than <number> days old must verify captcha
+"eve set verification time to <number>": New person will have to verify within given time in minutes
+"eve stop forever": stops sending wikipedia definitions automatically
+"eve leave": remove eve from the group
+
+(use the commands without " " in groups)
+*Commands only for groups*
+
+** PM commands **
+
+"help": see commands
+"friend": to be able to add to any group
+
+** Support Eve by donating (PM command) **
+
+"donate": support eve and her developer
+
+*** Use commands without " " ***

@@ -1,0 +1,24 @@
+**** V 2.0 ****
+
+*** Automatic bot detection! (beta) ***
+    Eve can now detect bots without captcha verification!
+    Auto-bot detect system can detect almost all the bots.
+    Captcha Verification can be performed for accounts less than 20 days by default and it can be customized by the owner.
+
+*** Set custom verification days. (admin command)
+	Say: Eve set verification days to <number>
+
+	example: Eve set verification time to 5
+	verification time will be set to 5 days. New person less than 5 days will have to verify.
+
+
+*** Welcome message will also be sent to invited people.
+
+
+*** forget name
+	Say: eve forget my name
+	(Coming soon!)
+
+
+*** delete welcome message (admin command)
+       (Coming soon!)

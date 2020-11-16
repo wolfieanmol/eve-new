@@ -1,0 +1,22 @@
+**** Frequently Asked Questions ****
+
+Q1) What is Eve?
+A)  Eve is an admin and information bot created by Wolfie to remove spam bots, verify new joiners, and to please the fun side of your group chat needs.
+
+Q2) Eve isn't responding in my chat.
+A)  If Eve is not responding then most likely Eve is down for the moment. Wait for it to get back up and running.
+
+Q3) Why won't Eve send captcha(verification) in my group?
+A)  Captcha Verification will start after 24 hours of adding Eve to your group as kik has resticted sending images in new groups before 24 hours. 
+    To check how much time is left for Eve to start captcha say: eve verification time left
+
+Q4) I can't add Eve to my group. It gives an error "must be chatting to be able to add to the group"
+A)  Simply open chat(PM) with Eve and say: Friend 
+    and then add Eve to your group. If Eve does not respond with anything then it may be down (see Q2)
+
+Q5) Eve is the owner and I am an admin. How do I remove Eve?
+A)  say: eve leave
+	and eve will leave (admin only command)
+
+Q6) Eve is the owner of my group and there are no other admins. How do I remove Eve?
+A ) Leave the group and join back, Eve will leave if she's the only admin or both rage and eve are the only two admins.
