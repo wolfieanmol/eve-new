@@ -44,6 +44,13 @@ class Database:
         self.cursor.close()
         self.connection.close()
 
+    def update_join_time(self, group_jid, join_time):
+        query = "UPDATE group_info SET join_time = ? WHERE group_jid = ?"
+        self.cursor.execute(query, (join_time, group_jid.split('@')[0]))
+        self.connection.commit()
+        self.cursor.close()
+        self.connection.close()
+
     def update_verification_status(self, status, group_jid, peer_jid):
         """checks if the verification_update request is carried out by an admin. if yes then only update the
         verification_status. """
@@ -288,9 +295,11 @@ class Database:
         return name
 
     def delete_given_name(self, group_jid, peer_jid):
+        print(group_jid, "    ", peer_jid)
         self.cursor.execute("DELETE FROM user_info WHERE group_jid = ? AND  peer_jid = ?",
                             (group_jid.split('@')[0], peer_jid))
 
+        self.connection.commit()
         self.cursor.close()
         self.connection.close()
 

@@ -8,8 +8,9 @@ class DatabaseUpdate:
         self.buffer = []
 
     def update(self, users):
+        print(type(users))
         # a = [ast.literal_eval(e) for e in users]
-        admins = {k: v for k, v in users}
+        admins = {k: v for k, v, x in users}
         print(set(admins.keys()))
         print(self.buffer)
         for buffer in self.buffer:
@@ -45,11 +46,11 @@ class DatabaseUpdate:
 
     def added_first_time(self, group_jid, owner, admins_jid):
         self.buffer.append(('group_init', group_jid, owner, admins_jid))
-        self.client.request_info_of_jids(admins_jid)
+        self.client.request_info_of_users(admins_jid)
 
     def admin_update(self, group_jid, owner, admins_jid):
         self.buffer.append(('admin_update', group_jid, owner, admins_jid))
-        self.client.request_info_of_jids(admins_jid)
+        self.client.request_info_of_users(admins_jid)
 
     def delete_group_info(self, group_jid):
         Database('data.db').delete_row(group_jid)
@@ -57,6 +58,6 @@ class DatabaseUpdate:
     def welcome_message(self, welcome_msg, group_jid, peer_jid):
         message = Database('data.db').update_welcome_msg(welcome_msg, group_jid, peer_jid)
         self.client.send_chat_message(group_jid,
-                                      "welcome message set to:\n {}".format(welcome_msg) if message is 1
-                                      else "Nice try Rage" if message is 2
+                                      "welcome message set to:\n {}".format(welcome_msg) if message == 1
+                                      else "Nice try Rage" if message == 2
                                       else "welcome message can only be set by an admin")
